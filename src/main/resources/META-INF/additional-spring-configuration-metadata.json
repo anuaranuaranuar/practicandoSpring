@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "gutendex.base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'gutendex.base-url'"
+  },
+  {
+    "name": "exchange.apikey",
+    "type": "java.lang.String",
+    "description": "A description for 'exchange.apikey'"
+  },
+  {
+    "name": "exchange.base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'exchange.base-url'"
+  },
+  {
+    "name": "gutendex.base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'gutendex.base-url'"
+  },
+  {
+    "name": "exchange.apikey",
+    "type": "java.lang.String",
+    "description": "A description for 'exchange.apikey'"
+  }
+]}

@@ -1,5 +1,6 @@
 package com.example.demo.external.api;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -9,12 +10,11 @@ import reactor.core.publisher.Mono;
 public class ExchangeApiClient {
     private final WebClient webClient;
 
-    public ExchangeApiClient(WebClient.Builder webClientBuilder) {
+    public ExchangeApiClient(
+        @Qualifier("exchangeClient") WebClient webClient) {
         
 
-        this.webClient = webClientBuilder
-                .baseUrl("https://v6.exchangerate-api.com/v6/aafd4024a38845e16e3a0cd5/")
-                .build();
+        this.webClient = webClient;
     }
 
     public Mono<String> getExchangeRate(String base, String target, String mount) {

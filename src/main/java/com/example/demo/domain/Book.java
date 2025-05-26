@@ -2,12 +2,11 @@ package com.example.demo.domain;
 
 import java.math.BigInteger;
 import java.net.URI;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
 public class Book{
-    private String name;
+    private String title;
     private List<Author> authors;
     private List<String> summaries;
     private List<String> personages;
@@ -15,9 +14,9 @@ public class Book{
     private Map<String, URI> formats;
     private BigInteger downloadCount;
 
-    public Book(String name, List<Author> authors, List<String> summaries, List<String> personages,
+    public Book(String title, List<Author> authors, List<String> summaries, List<String> personages,
             List<String> categories, Map<String, URI> formats, BigInteger downloadCount) {
-        this.name = name;
+        this.title = title;
         this.authors = authors;
         this.summaries = summaries;
         this.personages = personages;
@@ -26,12 +25,12 @@ public class Book{
         this.downloadCount = downloadCount;
     }
 
-    public String getName() {
-        return name;
+    public String gettitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void settitle(String title) {
+        this.title = title;
     }
 
     public List<Author> getAuthors() {
@@ -84,7 +83,7 @@ public class Book{
 
     @Override
     public String toString() {
-        return "(name=" + name +
+        return "(title=" + title +
                 ", authors=" + authors +
                 ", summaries=" + summaries +
                 ", personages=" + personages +

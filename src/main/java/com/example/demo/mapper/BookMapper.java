@@ -13,6 +13,8 @@ import com.example.demo.domain.Book;
 import com.example.demo.external.gutrndexApiDto.AuthorDto;
 import com.example.demo.external.gutrndexApiDto.BookDto;
 
+
+
 public class BookMapper {
     public static Book mapBook(BookDto dto) {
         return new Book(
@@ -25,6 +27,12 @@ public class BookMapper {
                 mapBigInteger(dto.downloadCount()));
     }
 
+    public static List<Book> mapBooks(List<BookDto> dtos ){
+        return dtos.stream()
+        .map(BookMapper::mapBook)
+        .toList();
+        
+    }
     public static List<Author> mapAuthor(List<AuthorDto> list) {
         return list.stream()
                 .map(author -> new Author(
@@ -40,7 +48,7 @@ public class BookMapper {
         try {
             return Year.of(Integer.parseInt(year));
         } catch (NumberFormatException e) {
-            System.out.println("No se pudo convertir la fecha: " +
+            System.out.println("No se pudo convertir la fecha: "+ year +
                     e.getMessage());
             return null;
         }
